@@ -9,7 +9,6 @@ from pathlib import Path
 # Choose the lates minimal amzn2 Linux AMI
 ami = aws.ec2.get_ami(most_recent="true",
                       owners=["amazon"],
-                      region=os.environ.get('awsRegion'),
                       filters=[aws.ec2.GetAmiFilterArgs(name="name",
                                                         values=["*amzn2-ami-minimal-hvm*"])])
 
