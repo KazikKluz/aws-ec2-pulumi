@@ -42,7 +42,7 @@ jobs:
       - uses: pulumi/actions@v3
         with:
           command: up
-          stack-name: aws-ec2-pulumi # When using an individual account, only use stack-name.
+          stack-name: aws-ec2
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 
@@ -70,7 +70,7 @@ jobs:
       - uses: pulumi/actions@v3
         with:
           command: up
-          stack-name: org-name/stack-name # When using an individual account, only use stack-name.
+          stack-name: aws-ec2 # When using an individual account, only use stack-name.
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
 #          github.event.inputs.instanceName }} -var awsRegion=${{ github.event.inputs.awsRegion }} -var instanceType=${{ github.event.inputs.instanceType }} -auto-approve
